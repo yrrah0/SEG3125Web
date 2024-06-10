@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frederick's Bike Repair</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: #4e7c88;">
+        <div class="container">
+          <a class="navbar-brand" href="index.html"style="color:#F0F0F0; font-family: 'Playfair Display', serif;">
+            <img src="logo.jpg" alt="Logo" width="40" class="d-inline-block align-text-middle"> 
+            Frederick's Bike Repair </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="index.html"style="color:rgba(255, 255, 255, 0.90)">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html"style="color:rgba(255, 255, 255, 0.90)">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="services.html"style="color:rgba(255, 255, 255, 0.90)">Our Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html"style="color:rgba(255, 255, 255, 0.90)">Contact Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="book.html" style="background-color: #d6f3ff; color:rgba(0, 0, 0, 0.74);font-family: 'Optima', sans-serif;">Book Appointment</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    <!-- Booking Section -->
+    <section class="container mt-5">
+        <h1>Book a Time With Us</h1>
+        <form action="validation.html">
+            <div class="row">
+            <div class="col">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="firstName">First Name</label>
+                    <input type="text" class="form-control" id="firstName" placeholder="First Name" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" placeholder="Last Name" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Email" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" class="form-control" id="phone" placeholder="Phone Number" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="availableServices">Available Services</label>
+                <select id="availableServices" class="form-control">
+                    <option selected>Choose...</option>
+                    <option>Bicycle Tune-up</option>
+                    <option>Advanced Bicycle Tune-up + Upgrades</option>
+                    <option>Bicycle Repair</option>
+                    <option>Complete Bicycle Overhall</option>
+                    <option>Bicycle Wrap</option>
+                    <option>Custom Bicycle Wrap</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="availableServices">Available Repairman</label>
+                <select id="availableServices" class="form-control">
+                    <option selected>Choose...</option>
+                    <option>Frederick Algebra</option>
+                    <option>Harold Smith</option>
+                    <option>Bryan Dinh</option>
+                    
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="availableTimes">Available Times</label>
+                
+                    <label for="time" style="color:white;">Select a time:</label>
+                    <select class="form-control" id="time">
+                      <option>8:30 AM</option>
+                      <option>9:00 AM</option>
+                      <option>9:30 AM</option>    
+                      <option>10:00 AM</option>
+                      <option>10:30 AM</option>
+                      <option>11:00 AM</option>
+                      <option>11:30 AM</option>
+                      <option>12:00 PM</option>
+                      <option>12:30 PM</option>
+                      <option>1:00 PM</option>
+                      <option>1:30 PM</option>
+                      <option>2:00 PM</option>
+                      <option>2:30 PM</option>
+                      <option>3:00 PM</option>
+                      <option>3:30 PM</option>
+                      <option>4:00 PM</option>
+                      <option>4:30 PM</option>
+                      <option>5:00 PM</option>
+                      <option>5:30 PM</option>
+                    </select>
+               
+            </div>
+        <form>
+            <div class="mb-3">
+                <label for="comment" class="form-label">Additional Information</label>
+                <textarea class="form-control" id="comment" rows="5" placeholder="Write here..."></textarea>
+            </div>
+        </form>
+            <button type="submit" class="btn btn-primary">Book Now</button>
+        </form>
+        
+    </div>
+    <div class="col">
+        <label for="selectedDay"style="color:white;">Select a Day:</label>
+      <div id="calendar"></div>
+      <p>Selected Day: <span id="selectedDay"></span></p>
+    </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function generateCalendar(year, month) {
+          const calendarDiv = document.getElementById("calendar");
+          const currentDate = new Date(year, month - 1, 1);
+          const daysInMonth = new Date(year, month, 0).getDate();
+          
+          let calendarHTML = `<table>
+                                <tr>
+                                  <th colspan="7">${currentDate.toLocaleString('default', { month: 'long', year: 'numeric' })}</th>
+                                </tr>
+                                <tr>
+                                  <th>Sun</th>
+                                  <th>Mon</th>
+                                  <th>Tue</th>
+                                  <th>Wed</th>
+                                  <th>Thu</th>
+                                  <th>Fri</th>
+                                  <th>Sat</th>
+                                </tr>`;
+          
+          let dayCount = 1;
+          const firstDay = currentDate.getDay();
+          
+          for (let week = 0; week < 6; week++) {
+            calendarHTML += '<tr>';
+            
+            for (let day = 0; day < 7; day++) {
+              if ((week === 0 && day < firstDay) || dayCount > daysInMonth) {
+                calendarHTML += '<td></td>';
+              } else {
+                calendarHTML += `<td onclick="selectDay(this)">${dayCount}</td>`;
+                dayCount++;
+              }
+            }
+            
+            calendarHTML += '</tr>';
+            
+            if (dayCount > daysInMonth) {
+              break;
+            }
+          }
+          
+          calendarHTML += '</table>';
+          calendarDiv.innerHTML = calendarHTML;
+        }
+    
+        function selectDay(cell) {
+          const selectedDayOutput = document.getElementById("selectedDay");
+          const selectedDay = document.querySelector(".selected");
+          
+          if (selectedDay) {
+            selectedDay.classList.remove("selected");
+          }
+          
+          cell.classList.add("selected");
+          selectedDayOutput.textContent = cell.textContent + " " + document.querySelector("th").textContent;
+        }
+        
+        const today = new Date();
+        const currentYear = today.getFullYear();
+        const currentMonth = today.getMonth() + 1;
+        generateCalendar(currentYear, currentMonth);
+      </script>
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/js/bootstrap.min.js"></script>
+      <script>
+        function validateForm() {
+          var name = document.getElementById("name").value;
+          var email = document.getElementById("email").value;
+          var phone = document.getElementById("phone").value;
+          
+          if (name === "" || email === "" || phone === "") {
+            alert("Please fill in all the required fields.");
+            return false;
+          }
+        }
+        </script>
+</body>
+</html>
